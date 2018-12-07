@@ -4,6 +4,18 @@ import os, random, struct, hashlib
 import SamuraiModule as Samurai
 from Crypto.Cipher import AES
 
+def show_banner():
+	banner = '''
+	__________        _________                        __   _______         
+	\______   \___.__.\_   ___ \_______ ___.__._______/  |_ \   _  \_______ 
+	 |     ___<   |  |/    \  \/\_  __ <   |  |\____ \   __\/  /_\  \_  __ \
+	 |    |    \___  |\     \____|  | \/\___  ||  |_> >  |  \  \_/   \  | \/
+	 |____|    / ____| \______  /|__|   / ____||   __/|__|   \_____  /__|   
+		   \/             \/        \/     |__|                \/  
+					BY S1DAL3X      
+	'''
+	print(banner)
+
 def main(path):
 	os.chdir(str(path))
 	for root, dirs, files in os.walk('.', topdown = False):
